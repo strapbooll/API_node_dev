@@ -16,9 +16,9 @@ module.exports = {
         if (!dev) {
             const apiResponse = await axios.get(`https://api.github.com/users/${github_username}`);
 
-            const { name = github_username, avatar_url, bio } = apiResponse.data;
+            const { name = login, avatar_url, bio } = apiResponse.data;
 
-            const techsArray = parseStringAsArray.parseStringAsArray(techs);
+            const techsArray = parseStringAsArray(techs);
 
             const location = {
                 type: 'Point',
